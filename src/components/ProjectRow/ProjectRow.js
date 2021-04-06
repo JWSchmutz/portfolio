@@ -3,45 +3,63 @@ import Project from "../Project/Project";
 import React, { useEffect, useState } from "react";
 
 const ProjectRow = (props) => {
-  const rowRef = React.createRef();
-  const [resizeState, setResizeState] = useState(0);
+  const rowRef = React.useRef();
+  const [hasLoaded, setHasLoaded] = useState(false);
   const [scrollArrows, setScrollArrows] = useState(false);
   const [left, setLeft] = useState(0);
   const [rowWidth, setRowWidth] = useState(null);
-  let numberOfChildren;
-  const setVariables = () => {
-    if (rowRef.current.offsetWidth < rowRef.current.scrollWidth) {
-      setScrollArrows(true);
-      setRowWidth(rowRef.current.offsetWidth);
-    }
-    numberOfChildren = rowRef;
-  };
+
+  function debounce(fn, ms) {
+    let timer;
+    return () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        timer = null;
+        fn.apply(this, arguments);
+      }, ms);
+    };
+  }
 
   useEffect(() => {
-    setVariables();
-    console.log(resizeState);
+    const setVariables = () => {
+      console.log(scrollArrows);
+      if (rowRef.current?.offsetWidth < rowRef.current?.scrollWidth) {
+        setRowWidth(rowRef.current.offsetWidth);
+        if (!scrollArrows) {
+          console.log("scrollArrows true now");
+          setScrollArrows(true);
+        }
+      } else {
+        setScrollArrows(false);
+      }
+    };
+
+    if (!hasLoaded) setVariables();
+
+    const debouncedHandleResize = debounce(setVariables, 300);
+
+    window.addEventListener("resize", debouncedHandleResize);
+
+    setHasLoaded(true);
+
+    return () => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
   }, []);
 
   const goLeft = () => {
-    const projectWidth =
-      rowWidth / rowRef.current.childNodes[2].childNodes.length;
-    console.log(
-      rowRef.current.childNodes[2].firstChild.getBoundingClientRect().x
-    );
+    const projectWidth = rowRef.current.childNodes[2].firstChild.offsetWidth;
     if (rowRef.current.childNodes[2].firstChild.getBoundingClientRect().x < 0)
-      setLeft(left + projectWidth);
+      setLeft(left + projectWidth + 20);
   };
   const goRight = () => {
-    const projectWidth =
-      rowWidth / rowRef.current.childNodes[2].childNodes.length;
+    const projectWidth = rowRef.current.childNodes[2].firstChild.offsetWidth;
     if (
       rowRef.current.childNodes[2].lastChild.getBoundingClientRect().x +
         projectWidth >
       rowWidth
     )
-      return setLeft(
-        left - rowWidth / rowRef.current.childNodes[2].childNodes.length
-      );
+      return setLeft(left - (projectWidth + 20));
   };
 
   return (
@@ -51,23 +69,19 @@ const ProjectRow = (props) => {
       </h3>
       <hr className="gray-bar" />
       <div className="slider" style={{ left: `${left}px` }}>
-        {props.data.projects.map((project) => (
-          <Project data={project} />
+        {props.data.projects.map((project, i) => (
+          <Project data={project} key={i} />
         ))}
       </div>
-      {scrollArrows ? (
+      {scrollArrows && (
         <div className="arrow arrow-left" onClick={goLeft}>
           &#60;
         </div>
-      ) : (
-        ""
       )}
-      {scrollArrows ? (
-        <div class="arrow arrow-right" onClick={goRight}>
+      {scrollArrows && (
+        <div className="arrow arrow-right" onClick={goRight}>
           &#62;
         </div>
-      ) : (
-        ""
       )}
     </div>
   );

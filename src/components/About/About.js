@@ -37,11 +37,11 @@ const About = () => {
           <h3 className="sub-title light-gray">Interests</h3>
           <p className="about-p light-gray">
             I am a massive nerd. In my free time, I like to code and play games.
-            I really like to play basketball and want to learn volleyball. My
-            wife and I volunteer at our church every Sunday. I am also
-            interested in math, logic, media, and philosophy. I very interested
-            in other cultures and languages. I love to learn greetings in many
-            languages, and I am almost fluent in Spanish.
+            I really like to play basketball, soccer, and volleyball (although I
+            am terrible at it). My wife and I volunteer at our church every
+            Sunday, and attend a small group wednesday nights. I am also
+            interested in math, logic, media, philosophy, and other cultures and
+            languages. I am close to fluent in Spanish.
           </p>
         </section>
       </div>
