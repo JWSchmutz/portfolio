@@ -1,36 +1,11 @@
 const data = [
-  { 
-    groupName: "React",
-    projects: [
-      {
-        title: "Family Space",
-        url: "https://jwschmutz.github.io/Family-Space/",
-        image: "family-space.jpg",
-      },
-      {
-        title: "PokeChess",
-        url: "https://jwschmutz.github.io/pokechess/",
-        image: "poke-chess.jpg",
-      },
-      {
-        title: "This Portfolio",
-        url: "https://jwschmutz.github.io/",
-        image: "portfolio.jpg",
-      },
-    ],
-  },
-  { 
-    groupName: "Full Stack with Server",
+  {
+    groupName: "Handlebars",
     projects: [
       {
         title: "Week Medical Supplies",
         url: "https://weekmedicalsupplies.herokuapp.com/",
         image: "week-medical-supplies.jpg",
-      },
-      {
-        title: "PokeChess",
-        url: "https://jwschmutz.github.io/pokechess/",
-        image: "poke-chess.jpg",
       },
       {
         title: "Seagrove TCG",
@@ -44,14 +19,24 @@ const data = [
       },
     ],
   },
-  { 
-    groupName: "Games",
+  {
+    groupName: "React",
     projects: [
       {
-        title: "PokeChess",
-        url: "https://jwschmutz.github.io/pokechess/",
-        image: "poke-chess.jpg",
+        title: "NBA Memory",
+        url: "https://jwschmutz.github.io/clicky/",
+        image: "clicky.jpg",
       },
+      {
+        title: "This Portfolio",
+        url: "https://jwschmutz.github.io/",
+        image: "portfolio.jpg",
+      },
+    ],
+  },
+  {
+    groupName: "Games",
+    projects: [
       {
         title: "Beat The Shroom",
         url: "https://jwschmutz.github.io/Fighting-Game/",
@@ -66,4 +51,4 @@ const data = [
   },
 ];
 
-export default data
+export default data;
