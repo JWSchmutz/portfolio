@@ -19,6 +19,9 @@ const App = () => {
           <Route exact path="/">
             <Redirect to="/projects" />
           </Route>
+          <Route exact path="/portfolio">
+            <Redirect to="/projects" />
+          </Route>
           <Route exact path="/projects">
             <Projects />
           </Route>
