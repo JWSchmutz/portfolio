@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.2d6c1b61.chunk.css",
+    "main.js": "/portfolio/static/js/main.73c6b0ea.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.73c6b0ea.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.43d9a0ba.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.43d9a0ba.js.map",
+    "static/js/2.1ca5cf12.chunk.js": "/portfolio/static/js/2.1ca5cf12.chunk.js",
+    "static/js/2.1ca5cf12.chunk.js.map": "/portfolio/static/js/2.1ca5cf12.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "static/css/main.2d6c1b61.chunk.css.map": "/portfolio/static/css/main.2d6c1b61.chunk.css.map",
+    "static/js/2.1ca5cf12.chunk.js.LICENSE.txt": "/portfolio/static/js/2.1ca5cf12.chunk.js.LICENSE.txt",
+    "static/media/beat-the-shroom.jpg": "/portfolio/static/media/beat-the-shroom.8a23b159.jpg",
+    "static/media/clicky.jpg": "/portfolio/static/media/clicky.8bea224e.jpg",
+    "static/media/family-space.jpg": "/portfolio/static/media/family-space.ccc92fa5.jpg",
+    "static/media/me.jpg": "/portfolio/static/media/me.dabe211b.jpg",
+    "static/media/patient-link.jpg": "/portfolio/static/media/patient-link.5ae601d7.jpg",
+    "static/media/poke-chess.jpg": "/portfolio/static/media/poke-chess.986cd400.jpg",
+    "static/media/pokemon-rpg.jpg": "/portfolio/static/media/pokemon-rpg.d917e43b.jpg",
+    "static/media/portfolio.jpg": "/portfolio/static/media/portfolio.a2f25f9f.jpg",
+    "static/media/seagrove-tcg.jpg": "/portfolio/static/media/seagrove-tcg.672cff2f.jpg",
+    "static/media/week-medical-supplies.jpg": "/portfolio/static/media/week-medical-supplies.5325511c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.43d9a0ba.js",
+    "static/js/2.1ca5cf12.chunk.js",
+    "static/css/main.2d6c1b61.chunk.css",
+    "static/js/main.73c6b0ea.chunk.js"
+  ]
+}
